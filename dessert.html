@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dessert Menu</title>
+    <style>
+        body {
+            font-family: Georgia, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff5f8;
+            color: #704f57;
+            background-image: url('image/background3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        header {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        header img {
+            width: 100%;
+            max-height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: rgba(244, 165, 192, 0.9);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        .navbar a:hover {
+        background: #ff6f91;
+        }
+
+        .menu-section {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: rgba(255, 250, 253, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-section h2 {
+            text-align: center;
+            color: #a45b71;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #f5c6d6;
+            border-radius: 10px;
+            background-color: #ffedf1;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .menu-item:hover {
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-item img {
+            width: 110px;
+            height: 110px;
+            border-radius: 10px;
+            margin-right: 15px;
+        }
+
+        .menu-details {
+            flex-grow: 1;
+        }
+
+        .menu-details h3 {
+            margin: 0;
+            color: #914d64;
+        }
+
+        .menu-details p {
+            margin: 5px 0;
+            color: #80616a;
+        }
+
+        .menu-price {
+            font-size: 17px;
+            font-weight: bold;
+            color: #914d64;
+        }
+
+        .order-btn {
+            background-color: #f3a6be;
+            border: none;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .order-btn:hover {
+            background-color: #d68a9c;
+        }
+
+        @media (max-width: 768px) {
+            .menu-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .menu-item img {
+                margin-bottom: 10px;
+            }
+        }
+
+            footer {
+            background: #e85a77;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            margin-top: 30px;
+            border-top: 5px solid #ffbfd1;
+        }
+    }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="main-courses.html">Menu</a>
+        <a href="review.html">Review</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <header>
+        <img src="image/mashisoyo_menu.png" alt="Dessert Menu Header">
+    </header>
+
+    <div class="navbar">
+        <a href="main-courses.html">Main Course</a>
+        <a href="snack.html">Snack</a>
+        <a href="dessert.html">Dessert</a>
+        <a href="drinks.html">Drinks</a>
+    </div>
+
+    <div class="menu-section" id="desserts">
+        <h2>Desserts</h2>
+        
+        <div class="menu-item">
+            <img src="image/strawberrybingsu.jpg" alt="Strawberry Bingsu">
+            <div class="menu-details">
+                <h3>Strawberry Bingsu</h3>
+                <p>Experience the sweet, refreshing taste of our strawberry bingsu!</p>
+                <div class="menu-price">RM13.00</div>
+                <button class="order-btn"onclick="orderNow('Strawberry Bingsu')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/lycheerosebingsu.jpg" alt="Lychee Rose Bingsu">
+            <div class="menu-details">
+                <h3>Lychee Rose Bingsu</h3>
+                <p>Garnished with fresh lychee, rose petals, it's a perfect summer treat, blending floral & fruit.</p>
+                <div class="menu-price">RM13.00</div>
+                <button class="order-btn"onclick="orderNow('Lychee Rose Bingsu')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/watermelonbingsu.jpg" alt="Watermelon Bingsu">
+            <div class="menu-details">
+                <h3>Watermelon Bingsu</h3>
+                <p>Refresh yourself with our watermelon bingsu, a perfect summer treat with delightful taste.</p>
+                <div class="menu-price">RM13.00</div>
+                <button class="order-btn"onclick="orderNow('Watermelon Bingsu')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/mangobingsu.jpg" alt="Mango Bingsu">
+            <div class="menu-details">
+                <h3>Mango Bingsu</h3>
+                <p>Dive into the tropical delight of our mango bingsu with sweet, juicy mango and condensed milk.</p>
+                <div class="menu-price">RM13.00</div>
+               <button class="order-btn"onclick="orderNow('Mango Bingsu')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/redbeanbingsu.jpg" alt="Redbean Bingsu">
+            <div class="menu-details">
+                <h3>Redbean Bingsu</h3>
+                <p>A base of milk topped with sweet red beans & drizzled with creamy condensed milk.</p>
+                <div class="menu-price">RM13.00</div>
+                <button class="order-btn"onclick="orderNow('Redbean Bingsu')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/matcharedbeanbingsu.jpg" alt="Matcha Redbean Bingsu">
+            <div class="menu-details">
+                <h3>Premium Matcha Redbean Bingsu</h3>
+                <p>Enjoy the refreshing blend of finely shaved ice, premium matcha, and sweet red bean.</p>
+                <div class="menu-price">RM13.00</div>
+               <button class="order-btn"onclick="orderNow('Matcha Redbean Bingsu')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/thaimilkbingsu.jpg" alt="Thai Milk Tea Bingsu">
+            <div class="menu-details">
+                <h3>Thai Milk Tea Bingsu</h3>
+                <p>Experience the rich, exotic flavors of our Thai Milk Tea Bingsu with finely shaved ice.</p>
+                <div class="menu-price">RM13.00</div>
+                <button class="order-btn"onclick="orderNow('Thai Milk Tea Bingsu')">Order Now</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Mashisoyo Cafe. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function orderNow(itemName) {
+            alert('You have ordered: ' + itemName + '\nThank you for your order!');
+        }
+    </script>
+
+</body>
+</html>

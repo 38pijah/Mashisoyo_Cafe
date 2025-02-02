@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Mashisoyo Kota Bharu</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Georgia', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
+            color: #5e3c3c;
+            background-image: url('image/background_review.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: rgba(244, 165, 192, 0.9);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background: #ff6f91;
+        }
+
+        header {
+            position: relative;
+            width: 100%;
+            height: 400px; 
+            overflow: hidden;
+        }
+
+        header video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto; 
+            object-fit: cover;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            flex: 1;
+            height: 100%;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero img {
+            width: 180px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .overview-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 12px;
+            max-width: 700px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .overview-container p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #5e3c3c;
+        }
+
+        .video-container {
+            text-align: center;
+            margin: 40px auto;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            border: 3px solid #f4a5c0;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-caption {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #5e3c3c;
+            font-weight: 500;
+        }
+
+        footer {
+            background: #e85a77;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 16px;
+            margin-top: auto;
+            border-top: 5px solid #ffbfd1;
+        }
+
+    </style>
+</head>
+<body>
+   
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="main-courses.html">Menu</a>
+        <a href="review.html">Review</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <header>
+        <video autoplay muted loop>
+            <source src="video/welcome.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </header>
+
+    <section class="hero">
+        <img src="image/mashisoyo_logo.png" alt="Mashisoyo Kota Bharu Logo">
+        <div class="overview-container">
+            <p>
+                Mashisoyo Kota Bharu is a cozy and Instagrammable café in the heart of Kota Bharu, Kelantan, offering a delightful fusion of authentic Korean and local flavors. Known for its inviting ambiance, it’s a perfect spot for casual hangouts, study sessions, and food lovers seeking unique flavors. The menu features bestsellers like Korean Fried Chicken, Tteokbokki, Bibimbap, and refreshing bubble teas, all served in a modern pastel-colored setting. Conveniently located at <strong>3584, Jalan Ismail, Bandar Kota Bharu, 15000 Kota Bharu, Kelantan</strong>, Mashisoyo provides a warm and memorable dining experience, making it a must-visit for anyone craving a taste of Korea in Malaysia. 🍜✨
+            </p>
+        </div>
+    </section>
+
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="video/mashisoyo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-caption">
+            <p>Experience the vibrant atmosphere of Mashisoyo Kota Bharu<sup>TM</sup></p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Mashisoyo Kota Bharu. All Rights Reserved.
+    </footer>
+</body>
+</html>

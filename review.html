@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews | Mashisoyo Cafe</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+       
+        body {
+            font-family: 'Georgia', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
+            color: #5e3c3c;
+            background-image: url('image/background_review.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        header {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        header img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 5px solid #ffbfd1;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: #f4a5c0;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .navbar a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background: #ff6f91;
+        }
+
+        .review-section {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 25px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .review-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: #b84869;
+        }
+
+    
+        .review-form input,
+        .review-form textarea,
+        .review-form select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #f4a5c0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        .review-form input:focus,
+        .review-form textarea:focus,
+        .review-form select:focus {
+            border-color: #ff6f91;
+            outline: none;
+            box-shadow: 0 0 8px rgba(255, 111, 145, 0.3);
+        }
+
+        .review-form button {
+            background: #ff6f91;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .review-form button:hover {
+            background: #e85a77;
+        }
+
+        .review-list {
+            margin-top: 25px;
+            text-align: left;
+        }
+
+        .review-item {
+            background: #ffe5ec;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+        }
+
+        .review-item:hover {
+            transform: scale(1.02);
+        }
+
+        .review-item h3 {
+            margin: 0;
+            color: #b84869;
+        }
+
+        .review-item p {
+            color: #555;
+        }
+
+        .review-item .rating {
+            color: #ffb400;
+            font-size: 18px;
+        }
+
+        .review-item .review-date {
+            font-size: 12px;
+            color: #888;
+        }
+
+        footer {
+            background: #e85a77;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            margin-top: 30px;
+            border-top: 5px solid #ffbfd1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="main-courses.html">Menu</a>
+        <a href="review.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <header>
+        <img src="image/header_review.png" alt="Customer Reviews">
+    </header>
+
+    <div class="review-section">
+        <h2>Customer Reviews</h2>
+
+        <div class="review-form">
+            <h3>Write a Review</h3>
+            <form id="reviewForm">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <textarea id="reviewText" rows="5" placeholder="Your Review" required></textarea>
+                <label for="rating">Rating:</label>
+                <select id="rating" required>
+                    <option value="5">⭐⭐⭐⭐⭐ 5 Stars</option>
+                    <option value="4">⭐⭐⭐⭐ 4 Stars</option>
+                    <option value="3">⭐⭐⭐ 3 Stars</option>
+                    <option value="2">⭐⭐ 2 Stars</option>
+                    <option value="1">⭐ 1 Star</option>
+                </select>
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+
+        <div class="review-list" id="reviewList"></div>
+    </div>
+
+    <script>
+        document.getElementById('reviewForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const reviewText = document.getElementById('reviewText').value;
+            const rating = document.getElementById('rating').value;
+
+            const newReview = document.createElement('div');
+            newReview.classList.add('review-item');
+            newReview.innerHTML = `
+                <h3>${name}</h3>
+                <div class="rating">${'⭐'.repeat(rating)}</div>
+                <p>${reviewText}</p>
+                <div class="review-date">Reviewed just now</div>
+            `;
+
+            document.getElementById('reviewList').insertBefore(newReview, document.getElementById('reviewList').firstChild);
+            document.getElementById('reviewForm').reset();
+        });
+    </script>
+
+    <footer>
+        &copy; 2025 Mashisoyo Cafe. All Rights Reserved.
+    </footer>
+
+</body>
+</html>

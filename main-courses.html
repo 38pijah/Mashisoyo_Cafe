@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu</title>
+    <style>
+        body {
+            font-family: 'Georgia', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffdde1, #ee9ca7);
+            color: #5e3c3c;
+            background-image: url('image/background3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background: rgba(244, 165, 192, 0.9);
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background: #ff6f91;
+        }
+
+        header img {
+            width: 100%;
+            max-height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .menu-section {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: rgba(255, 250, 253, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-section h2 {
+            text-align: center;
+            color: #a45b71;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #f5c6d6;
+            border-radius: 10px;
+            background-color: #ffedf1;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .menu-item:hover {
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-item img {
+            width: 110px;
+            height: 110px;
+            border-radius: 10px;
+            margin-right: 15px;
+        }
+
+        .menu-details {
+            flex-grow: 1;
+        }
+
+        .menu-details h3 {
+            margin: 0;
+            color: #914d64;
+        }
+
+        .menu-details p {
+            margin: 5px 0;
+            color: #80616a;
+        }
+
+        .menu-price {
+            font-size: 17px;
+            font-weight: bold;
+            color: #914d64;
+        }
+
+        .order-btn {
+            background-color: #f3a6be;
+            border: none;
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .order-btn:hover {
+            background-color: #d68a9c;
+        }
+
+        @media (max-width: 768px) {
+            .menu-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .menu-item img {
+                margin-bottom: 10px;
+            }
+        }
+
+        footer {
+            background: #e85a77;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            margin-top: 30px;
+            border-top: 5px solid #ffbfd1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="main-courses.html">Menu</a>
+        <a href="review.html">Review</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <header>
+        <img src="image/mashisoyo_menu.png" alt="Restaurant Menu Header">
+    </header>
+
+    <div class="navbar">
+        <a href="main-courses.html">Main Course</a>
+        <a href="snack.html">Snack</a>
+        <a href="dessert.html">Dessert</a>
+        <a href="drinks.html">Drinks</a>
+    </div>
+
+    <div class="menu-section" id="main-courses">
+        <h2>Main Course</h2>
+        <div class="menu-item">
+            <img src="image/bibimbap.avif" alt="Bibimbap">
+            <div class="menu-details">
+                <h3>Bibimbap</h3>
+                <p>Classic rice bowl with assorted vegetables and a fried egg.</p>
+                <div class="menu-price">RM15.00</div>
+                <button class="order-btn" onclick="orderNow('Bibimbap')">Order Now</button>
+            </div>
+        </div>
+        
+         <div class="menu-item">
+            <img src="image/japchae.webp" alt="Japchae">
+            <div class="menu-details">
+                <h3>Japchae</h3>
+                <p>Stir-fried glass noodles with vegetables and a hint of sweetness.</p>
+                <div class="menu-price">RM 15.00</div>
+                <button class="order-btn"onclick="orderNow('Japchae')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/tteok.jpg" alt="Toppoki Ramen">
+            <div class="menu-details">
+                <h3>Toppoki Ramen</h3>
+                <p>Chewy rice cakes in spicy ramen broth.</p>
+                <div class="menu-price">RM 15.00</div>
+                <button class="order-btn"onclick="orderNow('Toppoki Ramen')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/ramen.jpg" alt="Hot Chicken Ramen">
+            <div class="menu-details">
+                <h3>Hot Chicken Ramen</h3>
+                <p>Signature ramen noodle served with a chickens.</p>
+                <div class="menu-price">RM 15.00</div>
+                 <button class="order-btn"onclick="orderNow('Hot Chicken Ramen')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/jajangmyeon.jpg" alt="Jjangmyeon Noodle">
+            <div class="menu-details">
+                <h3>Jjangmyeon Noodle</h3>
+                <p>Thick wheat noodles topped with a rich, savory black bean sauce, diced beef, and vegetables. A Korean comfort classic.</p>
+                <div class="menu-price">RM 15.00</div>
+                <button class="order-btn"onclick="orderNow('Jjangmyeon Noodle')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/sundubu_jigae.jpg" alt="Sundubu Jigae">
+            <div class="menu-details">
+                <h3>Sundubu Jigae</h3>
+                <p>Spicy Korean soft tofu stew with seafood or beef, vegetables, and a rich, flavorful broth. Served bubbling hot with a bowl of rice!</p>
+                <div class="menu-price">RM 15.00</div>
+                <button class="order-btn"onclick="orderNow('Sundubu Jigae')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/dakgalbi.jpg" alt="Dakgalbi">
+            <div class="menu-details">
+                <h3>Dakgalbi</h3>
+                <p>Spicy stir-fried chicken with veggies and rice cakes.</p>
+                <div class="menu-price">RM 15.00</div>
+                <button class="order-btn"onclick="orderNow('Dakgalbi')">Order Now</button>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <img src="image/naengmyeon.jpg" alt="Naengmyeon">
+            <div class="menu-details">
+                <h3>Naengmyeon</h3>
+                <p>Cold buckwheat noodles in a refreshing broth.</p>
+                <div class="menu-price">RM 15.00</div>
+                <button class="order-btn"onclick="orderNow('Naengmyeon')">Order Now</button>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Mashisoyo Cafe. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function orderNow(itemName) {
+            alert('You have ordered: ' + itemName + '\nThank you for your order!');
+        }
+    </script>
+</body>
+</html> 
